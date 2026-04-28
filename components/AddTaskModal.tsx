@@ -114,9 +114,15 @@ export default function AddTaskModal({ selectedDate, forecast, weather, theme, o
               onChange={(e) => setTitle(e.target.value)}
               placeholder="What do you need to do?"
               autoFocus
-              className="w-full px-4 py-2.5 rounded-xl text-sm focus:outline-none transition-colors"
-              style={{ ...inputStyle, "::placeholder": { color: theme.textSecondary } }}
+              className="add-task-title-input w-full px-4 py-2.5 rounded-xl text-sm focus:outline-none transition-colors"
+              style={inputStyle}
             />
+            <style jsx>{`
+              .add-task-title-input::placeholder {
+                color: ${theme.textSecondary};
+              }
+            `}</style>
+
             {/* Outdoor detection hint */}
             {looksOutdoor && (
               <div className="flex items-center gap-1.5 mt-1.5">
